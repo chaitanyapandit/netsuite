@@ -96,6 +96,11 @@ module NetSuite
                       :@internalId => h[:value].internal_id
                     }
                   }
+                elsif h[:value].is_a?(Array) && h[:type] == 'SearchDateCustomField'
+                  {
+                    "platformCore:searchValue" => h[:value].first.to_s,
+                    "platformCore:searchValue2" => h[:value].last.to_s
+                  }
                 else
                   { "platformCore:searchValue" => h[:value] }
                 end

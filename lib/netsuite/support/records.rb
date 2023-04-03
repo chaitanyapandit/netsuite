@@ -60,6 +60,11 @@ module NetSuite
         Records.record_type_without_namespace(self)
       end
 
+      def type
+        s = record_type_without_namespace
+        s[0, 1].downcase + s[1..-1]
+      end
+      
       def refresh(credentials = {})
         fresh_record = self.class.get(self.internal_id, credentials)
 

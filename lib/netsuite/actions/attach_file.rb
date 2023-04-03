@@ -10,6 +10,10 @@ module NetSuite
 
       private
 
+      def request(credentials = {})
+        NetSuite::Configuration.connection({}, credentials).call(:attach, :message => request_body)
+      end
+
       # <soap:Body>
       #   <platformMsgs:attach>
       #     <platformCore:attachReference xsi:type="platformCore:AttachContactReference">

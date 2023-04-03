@@ -1,6 +1,7 @@
 require 'set'
 
 require 'savon'
+require 'overrides/xml_utility_node'
 require 'netsuite/version'
 require 'netsuite/errors'
 require 'netsuite/utilities'
@@ -65,6 +66,7 @@ module NetSuite
     autoload :UpsertList,       'netsuite/actions/upsert_list'
     autoload :Search,           'netsuite/actions/search'
     autoload :Login,            'netsuite/actions/login'
+    autoload :AttachFile,       'netsuite/actions/attach_file'
   end
 
   module Records
